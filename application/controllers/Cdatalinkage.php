@@ -28,12 +28,12 @@ class Cdatalinkage extends CI_Controller {
         // $content = $this->lcustomer->customer_edit_data($customer_id);
         // $this->template->full_admin_html_view($content);
     }
-    public function hung()
+    public function medication_list_BYT()
     {
         
         // $content = $this->ldatalinkage->datalinkage_add_form();
         // $this->template->full_admin_html_view($content);
-        $content = $this->ldatalinkage->credit_customer_list();
+        $content = $this->ldatalinkage->customer_list();
         //Here ,0 means array position 0 will be active class
         $this->template->full_admin_html_view($content);
         // $content = $this->lcustomer->customer_edit_data($customer_id);
