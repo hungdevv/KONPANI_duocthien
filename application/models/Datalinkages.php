@@ -8,13 +8,6 @@ class Datalinkages extends CI_Model {
     public function __construct() {
         parent::__construct();
     }
-
-    //Count customer
-    public function count_customer() {
-        return $this->db->count_all("customer_information");
-    }
-
-    //customer List
     public function datalinkage() {
         $this->db->select('*');
         $this->db->from('customer_information');
@@ -26,5 +19,4 @@ class Datalinkages extends CI_Model {
         return false;
     }
 }
-
-?>
+ ?>

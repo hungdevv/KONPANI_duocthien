@@ -19,9 +19,25 @@ class Cdatalinkage extends CI_Controller {
         // Default loading for Customer System.
   public function index()
     {
-        $content = $this->ldatalinkage->datalinkage_add_form();
+        
+        // $content = $this->ldatalinkage->datalinkage_add_form();
+        // $this->template->full_admin_html_view($content);
+        $content = $this->ldatalinkage->customer_list();
+        //Here ,0 means array position 0 will be active class
         $this->template->full_admin_html_view($content);
+        // $content = $this->lcustomer->customer_edit_data($customer_id);
+        // $this->template->full_admin_html_view($content);
+    }
+    public function hung()
+    {
+        
+        // $content = $this->ldatalinkage->datalinkage_add_form();
+        // $this->template->full_admin_html_view($content);
+        $content = $this->ldatalinkage->credit_customer_list();
+        //Here ,0 means array position 0 will be active class
+        $this->template->full_admin_html_view($content);
+        // $content = $this->lcustomer->customer_edit_data($customer_id);
+        // $this->template->full_admin_html_view($content);
     }
 }
-
 ?>
