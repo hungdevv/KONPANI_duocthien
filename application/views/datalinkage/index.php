@@ -86,7 +86,7 @@
 									    <th><?php echo display('count_rest') ?></th>
 										<th><?php echo display('count_type') ?></th>
 										<th><?php echo display('expiry_date') ?></th>
-										<th width="130px"><?php echo display('invoice_id') ?></th>
+										<th><?php echo display('invoice_id') ?></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -123,7 +123,7 @@
 <script src="<?php echo base_url()?>my-assets/js/admin_js/json/product_invoice.js.php" ></script>
 <script src="<?php echo base_url()?>my-assets/js/admin_js/invoice.js" type="text/javascript"></script>
 <!-- Manage Product Start -->
-<div class="content-wrapper">
+<!-- <div class="content-wrapper">
 	<section class="content-header">
 	    <div class="header-icon">
 	        <i class="pe-7s-note2"></i>
@@ -164,7 +164,7 @@
 	        }
 	    ?>
 
-	    <div class="row">
+	    <!-- <div class="row">
             <div class="col-sm-12">
              
                     <?php
@@ -181,11 +181,11 @@
            
         </div>
         <?php
-        if($this->permission1->method('manage_medicine','read')->access() || $this->permission1->method('manage_medicine','update')->access() || $this->permission1->method('manage_medicine','delete')->access()) { ?>
+        if($this->permission1->method('manage_medicine','read')->access() || $this->permission1->method('manage_medicine','update')->access() || $this->permission1->method('manage_medicine','delete')->access()) { ?> -->
            
 		<!-- Manage Product report -->
-		   <div class="row">
-		    <div class="col-sm-12">
+		   <!-- <div class="row"> -->
+		    <!-- <div class="col-sm-12">
 		        <div class="panel panel-bd lobidrag">
 		            <div class="panel-heading">
 		                <div class="panel-title">
@@ -221,7 +221,7 @@
 		          </div>
 		            <input type="hidden" id="total_product" value="<?php echo html_escape($total_product);?>" name="">
 		      </div>
-		    </div>
+		    </div> -->
            <?php
            }
            else{

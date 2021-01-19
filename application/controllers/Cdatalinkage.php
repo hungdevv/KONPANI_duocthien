@@ -30,7 +30,7 @@ class Cdatalinkage extends CI_Controller {
     }
     public function medication_list_BYT()
     {
-        
+            
         // $content = $this->ldatalinkage->datalinkage_add_form();
         // $this->template->full_admin_html_view($content);
         $content = $this->ldatalinkage->customer_list();
@@ -38,6 +38,11 @@ class Cdatalinkage extends CI_Controller {
         $this->template->full_admin_html_view($content);
         // $content = $this->lcustomer->customer_edit_data($customer_id);
         // $this->template->full_admin_html_view($content);
-    }
+    }   
+    // public function credit_customer_search_item() {
+    //     $customer_id = $this->input->post('customer_id',true);
+    //     $content = $this->lcustomer->credit_customer_search_item($customer_id);
+    //     $this->template->full_admin_html_view($content);
+    // }
 }
 ?>
