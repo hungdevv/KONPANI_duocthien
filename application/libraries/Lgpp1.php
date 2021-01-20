@@ -22,6 +22,24 @@ class Lgpp1 {
         return $purchaseList;
     }
 
+    public function gpp_stop() {
+        $CI = & get_instance();
+        $CI->load->model('Purchases');
+        $CI->load->model('Web_settings');
+        $CI->load->library('occational');
+        $currency_details = $CI->Web_settings->retrieve_setting_editdata();
+        $company_info = $CI->Purchases->retrieve_company();
+        $data = array(
+            'title'          => display('manage_purchase'),
+            'company_info'   => $company_info,
+            'currency' 	     => $currency_details[0]['currency'],
+            'total_purhcase' => $CI->Purchases->count_purchase(),
+        );
+
+        $purchaseList = $CI->parser->parse('gpp1/medication_stop', $data, true);
+        return $purchaseList;
+    }
+
 
 
 

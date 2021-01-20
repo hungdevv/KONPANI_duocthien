@@ -5,7 +5,7 @@
 	        <i class="pe-7s-note2"></i>
 	    </div>
 	    <div class="header-title" style="height: 50px">
-	        <h1><?php echo display('name_medication_in4') ?></h1>
+	        <h1><?php echo display('name_medication_stop') ?></h1>
 	        <ol class="breadcrumb">
 	            <li><a href="#"><i class="pe-7s-home"></i> <?php echo display('home') ?></a></li>
 	            <li><a href="#"><?php echo display('purchase') ?></a></li>

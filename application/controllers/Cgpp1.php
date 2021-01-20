@@ -44,6 +44,14 @@ public function index()
         $this->template->full_admin_html_view($content);
     }
 
+    public function medication_stop() {
+        $this->load->library('lgpp1');
+        $content = $this->lgpp1->gpp_stop();
+        $this->template->full_admin_html_view($content);
+    }
+
+
+
     public function medication_list_BYT()
     {
             

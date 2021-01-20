@@ -549,5 +549,4 @@ if ($result == TRUE) {
         $this->template->full_admin_html_view($content);
     }
 
-     
 }
