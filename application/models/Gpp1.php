@@ -10,14 +10,25 @@ class Gpp1 extends CI_Model {
     }
     public function gpp1() {
         $this->db->select('*');
-        $this->db->from('customer_information');
-        $this->db->order_by('create_date', 'desc');
+        // $this->db->from('customer_information');
+        $this->db->from('medication_info');
+        // $this->db->order_by('create_date', 'desc');
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
             return $query->num_rows();
         }
         return false;
     }
+    // public function gpp1() {
+    //     $this->db->select('*');
+    //     $this->db->from('medication_info');
+    //     $this->db->order_by('create_date', 'desc');
+    //     $query = $this->db->get();
+    //     if ($query->num_rows() > 0) {
+    //         return $query->num_rows();
+    //     }
+    //     return false;
+    // }
     public function getPurchaseList($postData=null){
         $this->load->library('occational');
         $this->load->model('Web_settings');
@@ -121,6 +132,6 @@ class Gpp1 extends CI_Model {
         );
 
         return $response; 
-   }
+   }    
 }
  ?>

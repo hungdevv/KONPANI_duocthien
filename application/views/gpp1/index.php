@@ -23,7 +23,7 @@
 	    ?>
 	    <div class="alert alert-info alert-dismissable">
 	        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-	        <?php echo $message ?>                    
+	        <?php echo $message ?>
 	    </div>
 	    <?php 
 	        $this->session->unset_userdata('message');
@@ -95,7 +95,7 @@
 										<th><?php echo display('in4_sick') ?></th>
 										<th><?php echo display('total_ammount') ?></th>
 										<th><?php echo display('action') ?></th>
-										<th><?php echo display('sl') ?></th>
+										<th><?php echo display('delete') ?></th>
 									</tr>
 								</thead>
 								<tbody>

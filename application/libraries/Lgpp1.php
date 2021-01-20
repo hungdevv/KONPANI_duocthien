@@ -7,6 +7,9 @@ class Lgpp1 {
     public function gpp_list() {
         $CI = & get_instance();
         $CI->load->model('Purchases');
+
+        // $CI->load->model('Gpp1');
+
         $CI->load->model('Web_settings');
         $CI->load->library('occational');
         $currency_details = $CI->Web_settings->retrieve_setting_editdata();
