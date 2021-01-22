@@ -12,6 +12,7 @@ class Gpp1 extends CI_Model {
         $this->db->select('*');
         // $this->db->from('customer_information');
         $this->db->from('medication_info');
+        
         // $this->db->order_by('create_date', 'desc');
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
