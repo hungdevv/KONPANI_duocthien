@@ -375,7 +375,7 @@ class Customers extends CI_Model {
         $balance = $record->balance;
 
         
-   if($this->permission1->method('manage_customer','update')->access()){
+   if($this->permission1->method('  ','update')->access()){
     $button .='<a href="'.$base_url.'Ccustomer/customer_update_form/'.$record->customer_id.'" class="btn btn-info btn-xs"  data-placement="left" title="'. display('update').'"><i class="fa fa-edit"></i></a> ';
 }
    if($this->permission1->method('manage_customer','delete')->access()){

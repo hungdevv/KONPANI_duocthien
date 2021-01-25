@@ -25,7 +25,7 @@ class Datalinkages extends CI_Model
     public function datalinkage_list($per_page = null, $page = null) {
         $this->db->select('*');
         
-        $this->db->from('medication_list_byt');
+        $this->db->from('medication_list_byt a');
         $this->db->order_by('create_date', 'desc');
         $this->db->limit($per_page, $page);
         $query = $this->db->get();
@@ -61,9 +61,10 @@ class Datalinkages extends CI_Model
 
         ## Search
         $searchQuery = "";
-        if ($searchValue != '') {
-            $searchQuery = " (a.name_product like '%" . $searchValue . "%' or a.number_shipment	 like '%" . $searchValue . "%' or a.name_product like '%" . $searchValue . "%'or a.name_product like '%" . $searchValue . "%' or a.name_product like '%" . $searchValue . "%' or a.name_product like '%" . $searchValue . "%' or a.name_product like '%" . $searchValue . "%' or a.name_product like '%" . $searchValue . "%' or a.name_product like '%" . $searchValue . "%')";
+        if($searchValue != ''){
+           $searchQuery = " (name_product like '%".$searchValue."%' or book like '%".$searchValue."%' or unit like '%".$searchValue."%')";
         }
+
 
         ## Total number of records without filtering
 
