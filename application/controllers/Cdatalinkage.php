@@ -33,11 +33,23 @@ class Cdatalinkage extends CI_Controller {
             
         // $content = $this->ldatalinkage->datalinkage_add_form();
         // $this->template->full_admin_html_view($content);
-        $content = $this->ldatalinkage->customer_list();
         //Here ,0 means array position 0 will be active class
-        $this->template->full_admin_html_view($content);
         // $content = $this->lcustomer->customer_edit_data($customer_id);
         // $this->template->full_admin_html_view($content);
+
+        // ----------test1----------
+
+        // $content = $this->ldatalinkage->datalinkage_list();
+        // $this->template->full_admin_html_view($content);
+
+        // --------------end test1 --------
+
+        $CI =& get_instance();
+        $this->auth->check_admin_auth();
+        $CI->load->library('ldatalinkage');
+        $CI->load->model('Datalinkages');
+        $content =$this->ldatalinkage->datalinkage_list();
+        $this->template->full_admin_html_view($content);
     }   
 
     public function medication_list_BYT1() {
@@ -59,7 +71,7 @@ class Cdatalinkage extends CI_Controller {
         $postData = $this->input->post();
         $data = $this->Datalinkages->getDatalinkageList($postData);
         echo json_encode($data);
-    } 
+    }   
 
     public function manage_datalinkage() {
         $CI =& get_instance();
@@ -70,10 +82,17 @@ class Cdatalinkage extends CI_Controller {
         $this->template->full_admin_html_view($content);
     }
 
-    public function datalinkage_update_form($customer_id) {
-        $content = $this->lcustomer->customer_edit_data($customer_id);
+    public function datalinkage_update_form($id) {
+        $content = $this->ldatalinkage->customer_edit_data($id);
         $this->template->full_admin_html_view($content);
     }
+
+    public function datalinkage_search_item() {
+        $id = $this->input->post('id',true);
+        $content = $this->ldatalinkage->datalinkage_search_item($id);
+        $this->template->full_admin_html_view($content);
+    }
+
 
     // public function credit_customer_search_item() {
     //     $customer_id = $this->input->post('customer_id',true);

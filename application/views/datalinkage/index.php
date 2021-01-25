@@ -4,7 +4,7 @@
 <div class="content-wrapper">
 	<section class="content-header">
 	    <div class="header-icon">
-	        <i class="pe-7s-note2"></i>
+	        <i class="pe-7s-not2"></i>
 	    </div>
 	    <div class="header-title">
 	        <h1><?php echo display('medication_list_BYT') ?></h1>
@@ -73,7 +73,7 @@
 		            </div>
 		            <div class="panel-body">
 		                <div class="table-responsive">
-		                     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="productList">
+		                     <table class="table table-striped table-bordered" cellspacing="0" width="100%" id="medication_list_BYT">
 		                        <thead>
 									<tr>
 										<th><?php echo display('sl') ?></th>

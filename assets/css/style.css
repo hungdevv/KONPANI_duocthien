@@ -3,6 +3,13 @@
   color: #fff !important;
   border-radius: 4;
 }
+
+/* .category >.nav-tabs > li.active > a {
+  background-color: #3B8104 !important;
+  color: #fff !important;
+  border-radius: 4;
+} */
+
 .category >.nav-tabs > li> a {
   background-color: #1C93C7 !important;
   color: #fff !important;

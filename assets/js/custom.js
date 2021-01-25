@@ -188,7 +188,10 @@ var twelveHour = $('.timepicker-12-hr').wickedpicker();
    var base_url = $("#base_url").val();
    var total_customer = $("#total_customer").val();
    var currency = $("#currency").val();
-    $('#customerLIst').DataTable({ 
+
+//----------------- start BYT-----------------
+
+    $('#medication_list_BYT').DataTable({ 
              responsive: true,
 
              "aaSorting": [[ 1, "asc" ]],
@@ -206,44 +209,47 @@ var twelveHour = $('.timepicker-12-hr').wickedpicker();
                 extend: "copy", className: "btn-sm prints"
             }
             , {
-                extend: "csv", title: "CustomerList", exportOptions: {
+                extend: "csv", title: "DatalinkageList", exportOptions: {
                        columns: [ 0, 1, 2, 3, 4,5,6,7 ] //Your Colume value those you want
                            }, className: "btn-sm prints"
             }
             , {
-                extend: "excel", title: "CustomerList", exportOptions: {
+                extend: "excel", title: "DatalinkageList", exportOptions: {
                        columns: [ 0, 1, 2, 3, 4,5,6,7 ] //Your Colume value those you want
                            },className: "btn-sm prints"
             }
             , {
-                extend: "pdf", title: "CustomerList",exportOptions: {
+                extend: "pdf", title: "DatalinkageList",exportOptions: {
                        columns: [ 0, 1, 2, 3, 4 ,5,6,7] //Your Colume value those you want
                            }, className: "btn-sm prints"
             }
             , {
                 extend: "print",exportOptions: {
                        columns: [ 0, 1, 2, 3, 4 ,5,6,7] //Your Colume value those you want
-                           },title: "<center>CustomerList</center>", className: "btn-sm prints"
+                           },title: "<center>DatalinkageList</center>", className: "btn-sm prints"
             }
             ],
             
             'serverMethod': 'post',
             'ajax': {
-               'url':base_url + 'Ccustomer/CheckCustomerList',
+               'url':base_url + 'Cdatalinkage/CheckDatalinkageList',
                 data:{
                 csrf_test_name : CSRF_TOKEN,
                }
             },
           'columns': [
-             { data: 'sl' },
-             { data: 'customer_name' },
-             { data: 'address'},
-             { data: 'address2'},
-             { data: 'mobile' },
-             { data: 'phone'},
-             { data: 'email'},
-             { data: 'balance',class:"balance",render: $.fn.dataTable.render.number( ',', '.', 2, currency ) },
-             { data: 'button'},
+             { data: 'id' },
+             { data: 'listbyt_id' },
+             { data: 'name_product' },
+             { data: 'book'},
+             { data: 'unit'},
+             { data: 'count_input' },
+             { data: 'count_output'},
+             { data: 'cout_rest'},
+             { data: 'number_shipment',class:"balance",render: $.fn.dataTable.render.number( ',', '.', 2, currency ) },
+             { data: 'expiry_date'},
+             { data: 'bill_id'},
+            //  { data: 'button'},
           ],
 
   "footerCallback": function(row, data, start, end, display) {
@@ -266,6 +272,89 @@ var twelveHour = $('.timepicker-12-hr').wickedpicker();
 }
 
     });
+
+    // ------------ End BYT------------
+
+
+$('#customerLIst').DataTable({ 
+  responsive: true,
+
+  "aaSorting": [[ 1, "asc" ]],
+  "columnDefs": [
+     { "bSortable": false, "aTargets": [0,2,3,4,5,6,7,8] },
+
+ ],
+'processing': true,
+'serverSide': true,
+
+
+'lengthMenu':[[10, 25, 50,100,250,500, total_customer], [10, 25, 50,100,250,500, "All"]],
+
+  dom:"'<'col-sm-4'l><'col-sm-4 text-center'><'col-sm-4'>Bfrtip", buttons:[ {
+     extend: "copy", className: "btn-sm prints"
+ }
+ , {
+     extend: "csv", title: "CustomerList", exportOptions: {
+            columns: [ 0, 1, 2, 3, 4,5,6,7 ] //Your Colume value those you want
+                }, className: "btn-sm prints"
+ }
+ , {
+     extend: "excel", title: "CustomerList", exportOptions: {
+            columns: [ 0, 1, 2, 3, 4,5,6,7 ] //Your Colume value those you want
+                },className: "btn-sm prints"
+ }
+ , {
+     extend: "pdf", title: "CustomerList",exportOptions: {
+            columns: [ 0, 1, 2, 3, 4 ,5,6,7] //Your Colume value those you want
+                }, className: "btn-sm prints"
+ }
+ , {
+     extend: "print",exportOptions: {
+            columns: [ 0, 1, 2, 3, 4 ,5,6,7] //Your Colume value those you want
+                },title: "<center>CustomerList</center>", className: "btn-sm prints"
+ }
+ ],
+ 
+ 'serverMethod': 'post',
+ 'ajax': {
+    'url':base_url + 'Ccustomer/CheckCustomerList',
+     data:{
+     csrf_test_name : CSRF_TOKEN,
+    }
+ },
+'columns': [
+  { data: 'sl' },
+  { data: 'customer_name' },
+  { data: 'address'},
+  { data: 'address2'},
+  { data: 'mobile' },
+  { data: 'phone'},
+  { data: 'email'},
+  // { data: 'email'},
+  { data: 'balance',class:"balance",render: $.fn.dataTable.render.number( ',', '.', 2, currency ) },
+  { data: 'button'},
+],
+
+"footerCallback": function(row, data, start, end, display) {
+var api = this.api();
+
+api.columns('.balance', {
+page: 'current'
+}).every(function() {
+var sum = this
+.data()
+.reduce(function(a, b) {
+var x = parseFloat(a) || 0;
+var y = parseFloat(b) || 0;
+return x + y;
+}, 0);
+$(this.footer()).html(currency+' '+sum.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+});
+
+
+}
+
+});
 
 
 /*credit customer part*/
@@ -677,6 +766,8 @@ var twelveHour = $('.timepicker-12-hr').wickedpicker();
 
 
 });
+
+
 
   $(function($){
 
@@ -1844,4 +1935,4 @@ $('.tax'+i).each(function()
                 $('#existrole').html("<p style='color:red'><?php echo display('no_role_selected');?></p>");
             }
         });
-    }
+    } 
