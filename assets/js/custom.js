@@ -210,7 +210,7 @@ var twelveHour = $('.timepicker-12-hr').wickedpicker();
             }
             , {
                 extend: "csv", title: "DatalinkageList", exportOptions: {
-                       columns: [ 0, 1, 2, 3, 4,5,6,7 ] //Your Colume value those you want
+                       columns: [ 0, 1, 2, 3, 4,5,6,7, 8 ] //Your Colume value those you want
                            }, className: "btn-sm prints"
             }
             , {
@@ -249,7 +249,7 @@ var twelveHour = $('.timepicker-12-hr').wickedpicker();
              { data: 'number_shipment',class:"balance",render: $.fn.dataTable.render.number( ',', '.', 2, currency ) },
              { data: 'expiry_date'},
              { data: 'bill_id'},
-            //  { data: 'button'},
+             { data: 'button'},
           ],
 
   "footerCallback": function(row, data, start, end, display) {

@@ -47,12 +47,12 @@
              
                     <?php
                     if($this->permission1->method('add_medicine','create')->access()) { ?>
-                        <a href="<?php echo base_url('Cproduct')?>" class="btn btn-info m-b-5 m-r-2"><i class="ti-plus"> </i><?php echo display('product_name')?></a>
+                        <a href="<?php echo base_url('Cdatalinkage')?>" class="btn btn-info m-b-5 m-r-2"><i class="ti-plus"> </i><?php echo display('product_name')?></a>
                     <?php } ?>
 
                     <?php
                     if($this->permission1->method('import_medicine_csv','create')->access()) { ?>
-                        <a href="<?php echo base_url('Cproduct/add_product_csv')?>" class="btn btn-success m-b-5 m-r-2"><i class="ti-plus"> </i><?php echo display('import_product_csv')?></a>
+                        <a href="<?php echo base_url('Cdatalinkage/add_product_csv')?>" class="btn btn-success m-b-5 m-r-2"><i class="ti-plus"> </i><?php echo display('import_product_csv')?></a>
                     <?php } ?>
 
                 </div>
@@ -87,6 +87,7 @@
 										<th><?php echo display('count_type') ?></th>
 										<th><?php echo display('expiry_date') ?></th>
 										<th><?php echo display('invoice_id') ?></th>
+										<th><?php echo display('action') ?></th>
 									</tr>
 								</thead>
 								<tbody>

@@ -110,7 +110,7 @@ class Datalinkages extends CI_Model
                 $button .= '<a href="' . $base_url . 'Cdatalinkage/datalinkage_update_form/' . $record->id . '" class="btn btn-info btn-xs"  data-placement="left" title="' . display('update') . '"><i class="fa fa-edit"></i></a> ';
             }
             if ($this->permission1->method('manage_datalinkage', 'delete')->access()) {
-                $button .= '<a href="' . $base_url . 'Cdatalinkage/datalinkage_update_form/' . $record->id . '" class="btn btn-danger btn-xs " onclick="' . $jsaction . '"><i class="fa fa-trash"></i></a>';
+                $button .= '<a href="' . $base_url . 'Cdatalinkage/datalinkage_delete/' . $record->id . '" class="btn btn-danger btn-xs " onclick="' . $jsaction . '"><i class="fa fa-trash"></i></a>';
             }
 
 
