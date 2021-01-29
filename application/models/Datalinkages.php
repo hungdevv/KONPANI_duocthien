@@ -156,4 +156,25 @@ class Datalinkages extends CI_Model
         }
         return false;
     }
+
+    public function delete_customer($customer_id,$customer_head) {
+        $customerdata = $this->db->select('*')->from('acc_coa')->where('customer_id', $customer_id)->get()->row();
+        $this->db->where('COAID', $customerdata->HeadCode);
+        $this->db->delete('acc_transaction');
+        $this->db->where('customer_id', $customer_id);
+        $this->db->delete('acc_coa');
+        $this->db->where('customer_id', $customer_id);
+        $this->db->delete('customer_information');
+
+        $this->db->select('*');
+        $this->db->from('customer_information');
+        $query = $this->db->get();
+        foreach ($query->result() as $row) {
+            $json_customer[] = array('label' => $row->customer_name, 'value' => $row->customer_id);
+        }
+        $cache_file = './my-assets/js/admin_js/json/customer.json';
+        $customerList = json_encode($json_customer);
+        file_put_contents($cache_file, $customerList);
+        return true;
+    }
 }
