@@ -248,7 +248,7 @@ var twelveHour = $('.timepicker-12-hr').wickedpicker();
              { data: 'cout_rest'},
              { data: 'number_shipment',class:"balance",render: $.fn.dataTable.render.number( ',', '.', 2, currency ) },
              { data: 'expiry_date'},
-             { data: 'bill_id'},
+             { data: 'bill_id'},  
              { data: 'button'},
           ],
 
@@ -267,10 +267,7 @@ var twelveHour = $('.timepicker-12-hr').wickedpicker();
       }, 0);
     $(this.footer()).html(currency+' '+sum.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}));
   });
-
-
 }
-
     });
 
     // ------------ End BYT------------
