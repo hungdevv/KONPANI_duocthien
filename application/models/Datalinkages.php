@@ -157,17 +157,17 @@ class Datalinkages extends CI_Model
         return false;
     }
 
-    public function delete_customer($customer_id,$customer_head) {
-        $customerdata = $this->db->select('*')->from('acc_coa')->where('customer_id', $customer_id)->get()->row();
+    public function delete_datalinkage($id,$customer_head) {
+        $customerdata = $this->db->select('*')->from('medication_list_byt')->where('id', $id)->get()->row();
         $this->db->where('COAID', $customerdata->HeadCode);
         $this->db->delete('acc_transaction');
-        $this->db->where('customer_id', $customer_id);
+        $this->db->where('id', $id);
         $this->db->delete('acc_coa');
-        $this->db->where('customer_id', $customer_id);
-        $this->db->delete('customer_information');
+        $this->db->where('id', $id);
+        $this->db->delete('medication_list_byt');
 
         $this->db->select('*');
-        $this->db->from('customer_information');
+        $this->db->from('medication_list_byt');
         $query = $this->db->get();
         foreach ($query->result() as $row) {
             $json_customer[] = array('label' => $row->customer_name, 'value' => $row->customer_id);

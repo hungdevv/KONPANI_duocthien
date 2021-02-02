@@ -619,15 +619,11 @@ class Customers extends CI_Model {
         return true;
     }
 
-  
     public function headcode(){
         $query=$this->db->query("SELECT MAX(HeadCode) as HeadCode FROM acc_coa WHERE HeadLevel='4' And HeadCode LIKE '1020300%'");
         return $query->row();
 
     }
-
-
-    
 
     // Customer list
     public function customer_list_advance(){
