@@ -154,9 +154,11 @@ class Ccustomer extends CI_Controller {
             'fax'             => $this->input->post('fax',TRUE),
             'contact'         => $this->input->post('contact',TRUE),
             'city'            => $this->input->post('city',TRUE),
+            'district'        => $this->input->post('district',TRUE),
             'state'           => $this->input->post('state',TRUE),
             'zip'             => $this->input->post('zip',TRUE),
-            'country'         => $this->input->post('country',TRUE),
+            'city'            => $this->input->post('city',TRUE),
+            'district'        => $this->input->post('district',TRUE),
             'email_address'   => $this->input->post('emailaddress',TRUE),
             'customer_email'  => $this->input->post('email',TRUE),
             'status'          => 2,
@@ -242,6 +244,7 @@ class Ccustomer extends CI_Controller {
            $insert_csv['customer_address']= (!empty($csv_line[11])?$csv_line[11]:'');
            $insert_csv['address2']         = (!empty($csv_line[12])?$csv_line[12]:'');
            $insert_csv['previousbalance'] = (!empty($csv_line[13])?$csv_line[13]:0);
+           $insert_csv['district']            = (!empty($csv_line[7])?$csv_line[14]:'');
         }
           
                  
@@ -381,10 +384,10 @@ class Ccustomer extends CI_Controller {
             'phone'           => $this->input->post('phone',TRUE),
             'fax'             => $this->input->post('fax',TRUE),
             'contact'         => $this->input->post('contact',TRUE),
-            'city'            => $this->input->post('city',TRUE),
+            'district'        => $this->input->post('district',TRUE),
             'state'           => $this->input->post('state',TRUE),
             'zip'             => $this->input->post('zip',TRUE),
-            'country'         => $this->input->post('country',TRUE),
+            'city'            => $this->input->post('city',TRUE),
             'email_address'   => $this->input->post('emailaddress',TRUE),
             'customer_email'  => $this->input->post('email',TRUE),
         );
@@ -549,4 +552,5 @@ if ($result == TRUE) {
         $this->template->full_admin_html_view($content);
     }
 
+     
 }

@@ -39,6 +39,7 @@ class Customers extends CI_Model {
         }
         return false;
     }
+    //--------------------------------------------
     public function getCustomerList($postData=null){
 
          $response = array();
@@ -110,6 +111,7 @@ class Customers extends CI_Model {
                
             $data[] = array( 
                 'sl'               =>$sl,
+                'manufacturer_id'  =>html_escape($record->manufacturer_id),
                 'customer_name'    =>html_escape($record->customer_name),
                 'address2'         =>html_escape($record->address2),
                 'mobile'           =>html_escape($record->customer_mobile),
@@ -122,7 +124,7 @@ class Customers extends CI_Model {
                 'city'             =>html_escape($record->city),
                 'state'            =>html_escape($record->state),
                 'zip'              =>html_escape($record->zip),
-                'country'          =>html_escape($record->country),
+                'district'         =>html_escape($record->district),
                 'balance'          =>(!empty($record->balance)?$record->balance:0),
                 'button'           =>$button,
                 
@@ -140,7 +142,7 @@ class Customers extends CI_Model {
 
          return $response; 
     }
-
+    //--------------------------------------------
   
     
         public function customer_product_buy($per_page, $page) {
@@ -375,7 +377,7 @@ class Customers extends CI_Model {
         $balance = $record->balance;
 
         
-   if($this->permission1->method('  ','update')->access()){
+   if($this->permission1->method('manage_customer','update')->access()){
     $button .='<a href="'.$base_url.'Ccustomer/customer_update_form/'.$record->customer_id.'" class="btn btn-info btn-xs"  data-placement="left" title="'. display('update').'"><i class="fa fa-edit"></i></a> ';
 }
    if($this->permission1->method('manage_customer','delete')->access()){
