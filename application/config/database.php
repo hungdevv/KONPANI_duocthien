@@ -10,15 +10,11 @@ $db['default'] = array(
     'hostname' => 'localhost',
     'username' => 'root',
     'password' => '',
-<<<<<<< HEAD
-    'database' => 'tym',
-=======
-    'database' => 'huy',
->>>>>>> 4495740322aac87c9ca7ca9001f43ea1d24bf45e
+    'database' => 'hung',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => FALSE,
-    'db_debug' => (ENVIRONMENT !== 'production'),
+    // 'db_debug' => (ENVIRONMENT !== 'production'),
     'cache_on' => FALSE,
     'cachedir' => '',
     'char_set' => 'utf8',
