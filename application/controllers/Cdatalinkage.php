@@ -110,7 +110,7 @@ class Cdatalinkage extends CI_Controller {
         $this->Datalinkage->delete_datalinkage($id,$customer_head);
         $this->Customers->delete_invoic($id);
         $this->session->set_userdata(array('message' => display('successfully_delete')));
-       redirect(base_url('Cdatalinkage/manage_datalinkage'));
+       redirect(base_url('Cdatalinkage/ manage_datalinkage'));
      }
         }
     // public function credit_customer_search_item() {
