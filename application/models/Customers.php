@@ -56,7 +56,8 @@ class Customers extends CI_Model {
          ## Search 
          $searchQuery = "";
          if($searchValue != ''){
-            $searchQuery = " (a.customer_name like '%".$searchValue."%' or a.customer_mobile like '%".$searchValue."%' or a.customer_email like '%".$searchValue."%'or a.phone like '%".$searchValue."%' or a.customer_address like '%".$searchValue."%' or a.country like '%".$searchValue."%' or a.state like '%".$searchValue."%' or a.zip like '%".$searchValue."%' or a.city like '%".$searchValue."%')";
+            // $searchQuery = " (a.customer_name like '%".$searchValue."%' or a.customer_mobile like '%".$searchValue."%' or a.customer_email like '%".$searchValue."%'or a.phone like '%".$searchValue."%' or a.customer_address like '%".$searchValue."%' or a.country like '%".$searchValue."%' or a.state like '%".$searchValue."%' or a.zip like '%".$searchValue."%' or a.city like '%".$searchValue."%')";
+            $searchQuery = " (a.customer_name like '%".$searchValue."%' or a.customer_mobile like '%".$searchValue."%' or a.customer_email like '%".$searchValue."%'or a.phone like '%".$searchValue."%' or a.customer_address like '%".$searchValue."%' or a.state like '%".$searchValue."%' or a.zip like '%".$searchValue."%' or a.city like '%".$searchValue."%')";
          }
 
          ## Total number of records without filtering
@@ -113,7 +114,7 @@ class Customers extends CI_Model {
                 'sl'               =>$sl,
                 'manufacturer_id'  =>html_escape($record->manufacturer_id),
                 'customer_name'    =>html_escape($record->customer_name),
-                'address2'         =>html_escape($record->address2),
+                'diseases'         =>html_escape($record->diseases),
                 'mobile'           =>html_escape($record->customer_mobile),
                 'address'          =>html_escape($record->customer_address),
                 'phone'            =>html_escape($record->phone),
@@ -290,6 +291,7 @@ class Customers extends CI_Model {
                 'contact'          =>html_escape($record->contact),
                 'fax'              =>html_escape($record->fax),
                 'city'             =>html_escape($record->city),
+                'district'         =>html_escape($record->district),
                 'state'            =>html_escape($record->state),
                 'zip'              =>html_escape($record->zip),
                 'country'          =>html_escape($record->country),

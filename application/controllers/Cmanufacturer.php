@@ -27,6 +27,7 @@ class Cmanufacturer extends CI_Controller {
        
         $data = array(
             'manufacturer_name' => $this->input->post('manufacturer_name',TRUE),
+            'manufacturer_id' => $this->input->post('manufacturer_id',TRUE),
             'address'       => $this->input->post('address',TRUE),
             'address2'      => $this->input->post('address2',TRUE),
             'mobile'        => $this->input->post('mobile',TRUE),

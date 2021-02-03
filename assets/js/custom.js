@@ -238,7 +238,8 @@ $(function($){
            { data: 'sl' },
            { data: 'manufacturer_id' },
            { data: 'customer_name' },
-           { data: 'address'},
+           { data: 'diseases' },
+          //  { data: 'address'},
            { data: 'city' },
            { data: 'district' },
           //  { data: 'address2'},
@@ -459,22 +460,22 @@ api.columns('.balance', {
           }
           , {
               extend: "csv", title: "manufacturerList", exportOptions: {
-                     columns: [ 0, 1, 2, 3, 4,5 ] //Your Colume value those you want
+                     columns: [ 0, 1, 2, 3, 4,5,6 ] //Your Colume value those you want
                          }, className: "btn-sm prints"
           }
           , {
               extend: "excel", title: "manufacturerList", exportOptions: {
-                     columns: [ 0, 1, 2, 3, 4,5 ] //Your Colume value those you want
+                     columns: [ 0, 1, 2, 3, 4,5,6 ] //Your Colume value those you want
                          },className: "btn-sm prints"
           }
           , {
               extend: "pdf", title: "manufacturerList",exportOptions: {
-                     columns: [ 0, 1, 2, 3, 4,5 ] //Your Colume value those you want
+                     columns: [ 0, 1, 2, 3, 4,5,6 ] //Your Colume value those you want
                          }, className: "btn-sm prints"
           }
           , {
               extend: "print",exportOptions: {
-                     columns: [ 0, 1, 2, 3, 4,5 ] //Your Colume value those you want
+                     columns: [ 0, 1, 2, 3, 4,5,6 ] //Your Colume value those you want
                          },title: "<center> manufacturerList</center>", className: "btn-sm prints"
           }
           ],
@@ -487,6 +488,7 @@ api.columns('.balance', {
              }
           },
         'columns': [
+           { data: 'manufacturer_id' },
            { data: 'manufacturer_name' },
            { data: 'address'},
            { data: 'mobile' },

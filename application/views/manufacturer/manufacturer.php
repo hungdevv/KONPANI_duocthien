@@ -64,6 +64,7 @@
                             <table class="table table-striped table-bordered" cellspacing="0"  id="manufacturerList"> 
                           <thead>
                               <tr>
+                                  <th><?php echo display('manufacturer_id') ?></th>
                                   <th><?php echo display('manufacturer_name') ?></th>
                                   <th><?php echo display('address') ?></th>
                                   <th><?php echo display('mobile') ?></th>

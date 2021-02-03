@@ -10,11 +10,11 @@ $db['default'] = array(
     'hostname' => 'localhost',
     'username' => 'root',
     'password' => '',
-<<<<<<< HEAD
+// <<<<<<< HEAD
     'database' => 'tym',
-=======
-    'database' => 'huy',
->>>>>>> 4495740322aac87c9ca7ca9001f43ea1d24bf45e
+// =======
+//     'database' => 'huy',
+// >>>>>>> 4495740322aac87c9ca7ca9001f43ea1d24bf45e
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => FALSE,

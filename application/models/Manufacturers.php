@@ -99,6 +99,7 @@ class Manufacturers extends CI_Model {
                
             $data[] = array( 
                 'sl'               =>$sl,
+                'manufacturer_id'=>html_escape($record->manufacturer_id),
                 'manufacturer_name'=>html_escape($record->manufacturer_name),
                 'address'          =>html_escape($record->address),
                 'address2'         =>html_escape($record->address2),

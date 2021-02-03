@@ -85,12 +85,20 @@
                                 <input class="form-control" name ="email" id="email" type="email" placeholder="<?php echo display('customer_email') ?>" tabindex="2"> 
                             </div>
                         </div>
+
                         <div class="form-group row">
+                            <label for="manufacturer_id" class="col-sm-4 col-form-label"><?php echo display('manufacturer_id') ?></label>
+                            <div class="col-sm-8">
+                                <input class="form-control" name ="manufacturer_id" id="manufacturer_id" type="manufacturer_id" placeholder="<?php echo display('manufacturer_id') ?>" tabindex="2"> 
+                            </div>
+                        </div>
+
+                        <!-- <div class="form-group row">
                             <label for="emailaddress" class="col-sm-4 col-form-label"><?php echo display('email').' '.display('address'); ?> <i class="text-danger"></i></label>
                             <div class="col-sm-8">
                                 <input class="form-control" name="emailaddress" id="emailaddress" type="email" placeholder="<?php echo display('email').' '.display('address') ?>"  >
                             </div>
-                        </div>
+                        </div> -->
                        
 
                         <div class="form-group row">
@@ -99,12 +107,12 @@
                                 <input class="form-control" name ="mobile" id="mobile" type="number" placeholder="<?php echo display('customer_mobile') ?>" min="0" tabindex="3" required>
                             </div>
                         </div>
-                         <div class="form-group row">
+                         <!-- <div class="form-group row">
                             <label for="phone" class="col-sm-4 col-form-label"><?php echo display('phone') ?> <i class="text-danger"></i></label>
                             <div class="col-sm-8">
                                 <input class="form-control" name="phone" id="phone" type="number" placeholder="<?php echo display('phone') ?>"  min="0" tabindex="2">
                             </div>
-                        </div>
+                        </div> -->
                                  <div class="form-group row">
                             <label for="contact" class="col-sm-4 col-form-label"><?php echo display('contact'); ?> <i class="text-danger"></i></label>
                             <div class="col-sm-8">
@@ -120,33 +128,41 @@
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="city" class="col-sm-4 col-form-label"><?php echo display('city'); ?> <i class="text-danger"></i></label>
                             <div class="col-sm-8">
                                 <input class="form-control" name="city" id="city" type="text" placeholder="<?php echo display('city') ?>"  >
                             </div>
-                        </div>
-                      <div class="form-group row">
+                        </div> -->
+
+                      <!-- <div class="form-group row">
                             <label for="state" class="col-sm-4 col-form-label"><?php echo display('state'); ?> <i class="text-danger"></i></label>
                             <div class="col-sm-8">
                                 <input class="form-control" name="state" id="state" type="text" placeholder="<?php echo display('state') ?>"  >
                             </div>
-                        </div>
+                        </div> -->
                       
                          
-                         <div class="form-group row">
+                         <!-- <div class="form-group row">
                             <label for="zip" class="col-sm-4 col-form-label"><?php echo display('zip'); ?> <i class="text-danger"></i></label>
                             <div class="col-sm-8">
                                 <input class="form-control" name="zip" id="zip" type="text" placeholder="<?php echo display('zip') ?>"  >
                             </div>
-                        </div>
+                        </div> -->
+
                          <div class="form-group row">
-                            <label for="country" class="col-sm-4 col-form-label"><?php echo display('country') ?> <i class="text-danger"></i></label>
+                            <label for="city" class="col-sm-4 col-form-label"><?php echo display('city') ?> <i class="text-danger"></i></label>
                             <div class="col-sm-8">
-                               <?php echo form_dropdown('country', $country_list,null, ' class="form-control"') ?>
+                               <?php echo form_dropdown('city', $city_list,null, ' class="form-control"') ?>
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="district" class="col-sm-4 col-form-label"><?php echo display('district') ?> <i class="text-danger"></i></label>
+                            <div class="col-sm-8">
+                               <?php echo form_dropdown('district', $district_list,null, ' class="form-control"') ?>
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="address " class="col-sm-4 col-form-label"><?php echo display('customer_address') ?></label>
@@ -154,17 +170,17 @@
                                 <textarea class="form-control" name="address" id="address " rows="2" placeholder="<?php echo display('customer_address') ?>"></textarea>
                             </div>
                         </div>
-                          <div class="form-group row">
+                          <!-- <div class="form-group row">
                             <label for="address2 " class="col-sm-4 col-form-label"><?php echo display('address') ?>2</label>
                             <div class="col-sm-8">
                                 <textarea class="form-control" name="address2" id="address2" rows="2" placeholder="<?php echo display('address') ?>2" ></textarea>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group row">
                             <label for="previous_balance" class="col-sm-4 col-form-label"><?php echo display('previous_balance') ?></label>
                             <div class="col-sm-8">
-                                <input class="form-control" name="previous_balance" id="previous_balance" type="text" min="0" placeholder="<?php echo display('previous_balance') ?>" tabindex="5">
+                                <input class="form-control" name="previous_balance" id="previous_balance" rows="2" type="text" min="0" placeholder="<?php echo display('previous_balance') ?>" tabindex="5">
                             </div>
                         </div>
                     </div>

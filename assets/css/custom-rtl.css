@@ -64,7 +64,7 @@
 
 .main-header .navbar-custom-menu,
 .main-header .navbar-right {
-    float: left;
+    float: right;
     margin-right: 0;
     margin-left: 25px;
 }

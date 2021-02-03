@@ -79,11 +79,12 @@
                             <table class="table table-responsive table-striped table-bordered" cellspacing="0"  id="customerLIst"> 
                                 <thead>
                                     <tr>
-                                        
+                                  
                                         <th><?php echo display('sl') ?></th>
                                         <th><?php echo display('manufacturer_id') ?></th>
                                         <th><?php echo display('customer_name') ?></th>
-                                        <th><?php echo display('address1'); ?></th>
+                                        <th><?php echo display('diseases') ?></th>
+                                        <!-- <th><?php echo display('address1'); ?></th> -->
                                         <th><?php echo display('city'); ?></th>
                                         <th><?php echo display('district'); ?></th>
                                         <!-- <th><?php echo display('address2'); ?></th> -->

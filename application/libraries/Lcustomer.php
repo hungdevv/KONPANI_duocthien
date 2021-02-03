@@ -147,9 +147,14 @@ class Lcustomer {
         $CI = & get_instance();
         $CI->load->model('Customers');
         $CI->load->model('Country_model');
+        $CI->load->model('City_model');
+        $CI->load->model('District_model');
         $data = array(
             'title' => display('add_customer'),
              'country_list' => $CI->Country_model->country(),
+             'city_list' => $CI->City_model->city(),
+             'district_list' => $CI->District_model->district(),
+             
         );
         $customerForm = $CI->parser->parse('customer/add_customer_form', $data, true);
         return $customerForm;
