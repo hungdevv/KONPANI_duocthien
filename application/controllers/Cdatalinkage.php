@@ -103,7 +103,7 @@ class Cdatalinkage extends CI_Controller {
           $invoiceinfo = $this->db->select('*')->from('medication_list_byt')->where('id',$id)->get()->num_rows();
         if($invoiceinfo > 0){
           $this->session->set_userdata(array('error_message' => 'Xóa dược không thành công!'));
-       redirect(base_url('Cdatalinkage/ manage_datalinkage'));
+       redirect(base_url('Cdatalinkage/manage_datalinkage'));
         }else{
         $customerinfo = $this->db->select('name_product')->from('medication_list_byt')->where('id',$id)->get()->row();
        $customer_head = $customerinfo->name_product.'-'.$id;
