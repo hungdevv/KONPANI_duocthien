@@ -10,7 +10,7 @@
 						<option value="{bank_id}">{bank_name}</option>
 					{/bank_list}
 				</select>
-			</div>	
+			</div>
 		</div>
 		<div class="lblFieldContnr">
 			<div class="lblContnr"><?php echo display('deposit') ?></div>

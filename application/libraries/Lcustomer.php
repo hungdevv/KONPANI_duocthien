@@ -167,8 +167,6 @@ class Lcustomer {
         $CI = & get_instance();
         $CI->load->model('Customers');
         $CI->load->model('Country_model');
-        $CI->load->model('City_model');
-        $CI->load->model('District_model');
         $customer_detail = $CI->Customers->retrieve_customer_editdata($customer_id);
         $data = array(
             'title'           => display('customer_edit'),
@@ -181,15 +179,12 @@ class Lcustomer {
             'fax'             => $customer_detail[0]['fax'],
             'contact'         => $customer_detail[0]['contact'],
             'city'            => $customer_detail[0]['city'],
-            'district'            => $customer_detail[0]['district'],
             'state'           => $customer_detail[0]['state'],
             'zip'             => $customer_detail[0]['zip'],
-            
+            'country'         => $customer_detail[0]['country'],
             'customer_email'  => $customer_detail[0]['customer_email'],
             'email_address'   => $customer_detail[0]['email_address'],
             'country_list'    => $CI->Country_model->country(),
-            'city_list'       => $CI->City_model->city(),
-            'district_list'   => $CI->District_model->district(),
             'status'          => $customer_detail[0]['status']
         );
         $chapterList = $CI->parser->parse('customer/edit_customer_form', $data, true);
@@ -240,7 +235,7 @@ class Lcustomer {
     
 
 
-        public function advance_details_data($receiptid,$customer_id) {
+    public function advance_details_data($receiptid,$customer_id) {
 
         $CI = & get_instance();
         $CI->load->model('Customers');

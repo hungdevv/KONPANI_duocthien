@@ -15,13 +15,13 @@ class Cpurchase extends CI_Controller {
 	}
 
 	//Manage purchase
-	    public function manage_purchase() {
+	public function manage_purchase() {
         $this->load->library('lpurchase');
         $content = $this->lpurchase->purchase_list();
         $this->template->full_admin_html_view($content);
     }
 
-        public function CheckPurchaseList(){
+    public function CheckPurchaseList(){
         // GET data
         $this->load->model('Purchases');
         $postData = $this->input->post();

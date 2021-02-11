@@ -77,6 +77,7 @@ class Ccustomer extends CI_Controller {
      public function CheckCreditCustomerList(){
         // GET data
         $this->load->model('Customers');
+        $this->auth->check_admin_auth();
         $postData = $this->input->post();
         $data = $this->Customers->getCreditCustomerList($postData);
         echo json_encode($data);
@@ -154,11 +155,9 @@ class Ccustomer extends CI_Controller {
             'fax'             => $this->input->post('fax',TRUE),
             'contact'         => $this->input->post('contact',TRUE),
             'city'            => $this->input->post('city',TRUE),
-            'district'        => $this->input->post('district',TRUE),
             'state'           => $this->input->post('state',TRUE),
             'zip'             => $this->input->post('zip',TRUE),
-            'city'            => $this->input->post('city',TRUE),
-            'district'        => $this->input->post('district',TRUE),
+            'country'         => $this->input->post('country',TRUE),
             'email_address'   => $this->input->post('emailaddress',TRUE),
             'customer_email'  => $this->input->post('email',TRUE),
             'status'          => 2,
@@ -244,7 +243,6 @@ class Ccustomer extends CI_Controller {
            $insert_csv['customer_address']= (!empty($csv_line[11])?$csv_line[11]:'');
            $insert_csv['address2']         = (!empty($csv_line[12])?$csv_line[12]:'');
            $insert_csv['previousbalance'] = (!empty($csv_line[13])?$csv_line[13]:0);
-           $insert_csv['district']            = (!empty($csv_line[7])?$csv_line[14]:'');
         }
           
                  
@@ -384,10 +382,10 @@ class Ccustomer extends CI_Controller {
             'phone'           => $this->input->post('phone',TRUE),
             'fax'             => $this->input->post('fax',TRUE),
             'contact'         => $this->input->post('contact',TRUE),
-            'district'        => $this->input->post('district',TRUE),
+            'city'            => $this->input->post('city',TRUE),
             'state'           => $this->input->post('state',TRUE),
             'zip'             => $this->input->post('zip',TRUE),
-            'city'            => $this->input->post('city',TRUE),
+            'country'         => $this->input->post('country',TRUE),
             'email_address'   => $this->input->post('emailaddress',TRUE),
             'customer_email'  => $this->input->post('email',TRUE),
         );

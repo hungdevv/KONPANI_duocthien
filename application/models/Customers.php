@@ -25,7 +25,7 @@ class Customers extends CI_Model {
         }
         return false;
     }
-
+    
     //customer List
     public function customer_list($per_page = null, $page = null) {
         $this->db->select('*');
@@ -39,7 +39,6 @@ class Customers extends CI_Model {
         }
         return false;
     }
-    //--------------------------------------------
     public function getCustomerList($postData=null){
 
          $response = array();
@@ -90,7 +89,7 @@ class Customers extends CI_Model {
          $this->db->limit($rowperpage, $start);
          $records = $this->db->get()->result();
          $data = array();
-         $sl =1;
+         $sl = 1;
   
          foreach($records as $record ){
           $button = '';
@@ -111,7 +110,6 @@ class Customers extends CI_Model {
                
             $data[] = array( 
                 'sl'               =>$sl,
-                'manufacturer_id'  =>html_escape($record->manufacturer_id),
                 'customer_name'    =>html_escape($record->customer_name),
                 'address2'         =>html_escape($record->address2),
                 'mobile'           =>html_escape($record->customer_mobile),
@@ -124,7 +122,7 @@ class Customers extends CI_Model {
                 'city'             =>html_escape($record->city),
                 'state'            =>html_escape($record->state),
                 'zip'              =>html_escape($record->zip),
-                'district'         =>html_escape($record->district),
+                'country'          =>html_escape($record->country),
                 'balance'          =>(!empty($record->balance)?$record->balance:0),
                 'button'           =>$button,
                 
@@ -142,7 +140,7 @@ class Customers extends CI_Model {
 
          return $response; 
     }
-    //--------------------------------------------
+
   
     
         public function customer_product_buy($per_page, $page) {
@@ -190,7 +188,7 @@ class Customers extends CI_Model {
         return false;
     }
     
-       public function customerledger_searchdata($customer_id, $start, $end) {
+    public function customerledger_searchdata($customer_id, $start, $end) {
         $this->db->select('a.*,b.HeadName');
         $this->db->from('acc_transaction a');
         $this->db->join('acc_coa b','a.COAID=b.HeadCode');
@@ -208,7 +206,7 @@ class Customers extends CI_Model {
  
 
 
-     public function getCreditCustomerList($postData=null){
+    public function getCreditCustomerList($postData=null){
 
          $response = array();
 
@@ -621,11 +619,15 @@ class Customers extends CI_Model {
         return true;
     }
 
+  
     public function headcode(){
         $query=$this->db->query("SELECT MAX(HeadCode) as HeadCode FROM acc_coa WHERE HeadLevel='4' And HeadCode LIKE '1020300%'");
         return $query->row();
 
     }
+
+
+    
 
     // Customer list
     public function customer_list_advance(){

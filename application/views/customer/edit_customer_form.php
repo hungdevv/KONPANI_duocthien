@@ -66,12 +66,12 @@
                                 <input class="form-control" name ="email" value="{customer_email}" id="email" type="email" placeholder="<?php echo display('customer_email') ?>" tabindex="2">
                             </div>
                         </div>
-                        <!-- <div class="form-group row">
+                        <div class="form-group row">
                             <label for="emailaddress" class="col-sm-4 col-form-label"><?php echo display('email').' '.display('address'); ?> <i class="text-danger"></i></label>
                             <div class="col-sm-8">
                                 <input class="form-control" name="emailaddress" id="emailaddress" type="email" placeholder="<?php echo display('email').' '.display('address') ?>"  value="{email_address}">
                             </div>
-                        </div> -->
+                        </div>
                        
 
                         <div class="form-group row">
@@ -101,14 +101,13 @@
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <!-- <div class="form-group row">
+                        <div class="form-group row">
                             <label for="city" class="col-sm-4 col-form-label"><?php echo display('city'); ?> <i class="text-danger"></i></label>
                             <div class="col-sm-8">
                                 <input class="form-control" name="city" id="city" type="text" value="{city}" placeholder="<?php echo display('city') ?>"  >
                             </div>
-                        </div> -->
-                        
-                      <!-- <div class="form-group row">
+                        </div>
+                      <div class="form-group row">
                             <label for="state" class="col-sm-4 col-form-label"><?php echo display('state'); ?> <i class="text-danger"></i></label>
                             <div class="col-sm-8">
                                 <input class="form-control" name="state" id="state" type="text" value="{state}" placeholder="<?php echo display('state') ?>"  >
@@ -121,24 +120,16 @@
                             <div class="col-sm-8">
                                 <input class="form-control" name="zip" id="zip" type="text" value="{zip}" placeholder="<?php echo display('zip') ?>"  >
                             </div>
-                        </div> -->
-
-                         
-
-                        <div class="form-group row">
-                            <label for="city" class="col-sm-4 col-form-label"><?php echo display('city') ?> <i class="text-danger"></i></label>
+                        </div>
+                         <div class="form-group row">
+                            <label for="country" class="col-sm-4 col-form-label"><?php echo display('country') ?> <i class="text-danger"></i></label>
                             <div class="col-sm-8">
-                                <?php echo form_dropdown('city', $city_list,$city, ' class="form-control"') ?>
+                                <?php echo form_dropdown('country', $country_list,$country, ' class="form-control"') ?>
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="district" class="col-sm-4 col-form-label"><?php echo display('district') ?> <i class="text-danger"></i></label>
-                            <div class="col-sm-8">
-                                <?php echo form_dropdown('district', $district_list,$district, ' class="form-control"') ?>
-                            </div>
-                        </div>
-                    
+
+   
                         <div class="form-group row">
                             <label for="address " class="col-sm-4 col-form-label"><?php echo display('address') ?>1</label>
                             <div class="col-sm-8">
