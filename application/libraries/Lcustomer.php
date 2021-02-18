@@ -179,6 +179,7 @@ class Lcustomer {
             'title'           => display('customer_edit'),
             'customer_id'     => $customer_detail[0]['customer_id'],
             'customer_name'   => $customer_detail[0]['customer_name'],
+            'diseases'        => $customer_detail[0]['diseases'],
             'customer_address'=> $customer_detail[0]['customer_address'],
             'address2'        => $customer_detail[0]['address2'],
             'customer_mobile' => $customer_detail[0]['customer_mobile'],
